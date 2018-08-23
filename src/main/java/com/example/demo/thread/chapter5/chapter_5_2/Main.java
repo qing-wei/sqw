@@ -26,7 +26,7 @@ public class Main {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        } while (documentTask.isDone());
+        } while (!documentTask.isDone());
 
         forkJoinPool.shutdown();
 
