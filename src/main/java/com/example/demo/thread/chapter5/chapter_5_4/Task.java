@@ -1,5 +1,6 @@
 package com.example.demo.thread.chapter5.chapter_5_4;
 
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.RecursiveTask;
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +20,7 @@ public class Task extends RecursiveTask<Integer> {
     @Override
     protected Integer compute() {
         System.out.printf("Task: Start From %d to %d.\n", start, end);
+        Integer result = 0;
         if (end - start < 10) {
             if ((3 > start) && (3 < end)) {
                 Exception e = new Exception("This task throws an Exception: "+ "Task from "+start+" to "+end);
@@ -35,9 +37,17 @@ public class Task extends RecursiveTask<Integer> {
             Task task1 = new Task(array, start, mid);
             Task task2 = new Task(array, mid, end);
             invokeAll(task1, task2);
+            try {
+                result = task1.get() + task2.get();
+                System.out.printf("Task: Result from %d to %d: %d.\n", start, end, result);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
         }
 
         System.out.printf("Task: End from %d to %d.\n", start, end);
-        return 0;
+        return result;
     }
 }

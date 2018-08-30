@@ -19,8 +19,6 @@ public class Main {
             e.printStackTrace();
         }
 
-
-
         if (task.isCompletedAbnormally()) {
             System.out.printf("Main: An exception has occured.\n");
             System.out.printf("Main: %s.\n", task.getException());
