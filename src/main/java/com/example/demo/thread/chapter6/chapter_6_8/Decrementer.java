@@ -1,6 +1,5 @@
 package com.example.demo.thread.chapter6.chapter_6_8;
 
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicIntegerArray;
 
 /**
