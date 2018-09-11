@@ -15,5 +15,15 @@ public class IntegerTest {
         Integer d = new Integer(17);
         System.out.println(c == d);
         System.out.println(c.equals(d));
+
+        Integer e = 18;
+        Integer f = 18;
+        System.out.println(e == f);
+        System.out.println(e.equals(f));
+
+        Integer g = 128;
+        Integer h = 128;
+        System.out.println(g == h);
+        System.out.println(g.equals(h));
     }
 }
