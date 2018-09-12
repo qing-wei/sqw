@@ -16,6 +16,13 @@ public class Test {
     }
 
     private static String createOrderSn(int i){
-        return String.format("%07d",i) + System.currentTimeMillis();
+        try {
+            return String.format("%07d",i) + System.currentTimeMillis();
+        } catch (Exception e) {
+            System.out.printf("sdfdf.\n");
+            return "s";
+        } finally {
+            System.out.println(123);
+        }
     }
 }
