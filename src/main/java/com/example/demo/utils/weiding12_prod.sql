@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 47.95.237.225
+Source Server         : 39.105.133.13
 Source Server Version : 50722
-Source Host           : 47.95.237.225:3306
+Source Host           : 39.105.133.13:3306
 Source Database       : weiding12
 
 Target Server Type    : MYSQL
 Target Server Version : 50722
 File Encoding         : 65001
 
-Date: 2018-09-19 15:46:46
+Date: 2018-09-19 15:47:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -18,7 +18,6 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 -- Table structure for as_antifake_code
 -- ----------------------------
-DROP TABLE IF EXISTS `as_antifake_code`;
 CREATE TABLE `as_antifake_code` (
   `ac_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'acid',
   `antifake_code` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '防伪码',
@@ -40,7 +39,7 @@ CREATE TABLE `as_antifake_code` (
   `website` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'website',
   `pc_website` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `weixin` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'weixin',
-  `pc_weixin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pc_weixin` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `add_time` datetime DEFAULT NULL COMMENT '添加时间',
   `first_query` datetime DEFAULT NULL COMMENT '首次查询时间',
   `update_query` datetime DEFAULT NULL COMMENT '最新查询时间',
@@ -49,7 +48,7 @@ CREATE TABLE `as_antifake_code` (
   `flag` int(11) DEFAULT NULL COMMENT '是否启用',
   `comment` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`ac_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=641 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='防伪码表';
+) ENGINE=InnoDB AUTO_INCREMENT=2463 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='防伪码表';
 
 -- ----------------------------
 -- Table structure for as_antifake_code_gen
@@ -74,7 +73,7 @@ CREATE TABLE `as_antifake_code_gen` (
   `trader_id` int(11) DEFAULT NULL,
   `trace_ability` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'traceability',
   `website` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'website',
-  `pc_website` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pc_website` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `weixin` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'weixin',
   `pc_weixin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `add_time` datetime DEFAULT NULL COMMENT '添加时间',
@@ -85,7 +84,7 @@ CREATE TABLE `as_antifake_code_gen` (
   `flag` int(11) DEFAULT NULL COMMENT '是否启用',
   `comment` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`ac_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=725 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='防伪码表';
+) ENGINE=InnoDB AUTO_INCREMENT=2549 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='防伪码表';
 
 -- ----------------------------
 -- Table structure for bs_attr_name
@@ -111,7 +110,7 @@ CREATE TABLE `bs_attr_name` (
   `add_time` datetime DEFAULT NULL COMMENT '添加时间',
   `comment` varchar(50) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`anid`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4 COMMENT='商品属性表';
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COMMENT='商品属性表';
 
 -- ----------------------------
 -- Table structure for bs_attr_value
@@ -127,7 +126,7 @@ CREATE TABLE `bs_attr_value` (
   `add_time` datetime DEFAULT NULL COMMENT '创建时间',
   `comment` varchar(50) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`avid`)
-) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8mb4 COMMENT='商品属性值表';
+) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8mb4 COMMENT='商品属性值表';
 
 -- ----------------------------
 -- Table structure for bs_brand
@@ -146,7 +145,7 @@ CREATE TABLE `bs_brand` (
   `status` int(11) DEFAULT NULL COMMENT '状态',
   `comment` varchar(50) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`bid`)
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8mb4 COMMENT='品牌';
+) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8mb4 COMMENT='品牌';
 
 -- ----------------------------
 -- Table structure for bs_category
@@ -175,7 +174,7 @@ CREATE TABLE `bs_category` (
   `company_id` int(11) DEFAULT NULL COMMENT '所属公司',
   `team_id` int(11) DEFAULT NULL COMMENT '所属团队',
   PRIMARY KEY (`catid`)
-) ENGINE=InnoDB AUTO_INCREMENT=667 DEFAULT CHARSET=utf8mb4 COMMENT='商品分类表';
+) ENGINE=InnoDB AUTO_INCREMENT=660 DEFAULT CHARSET=utf8mb4 COMMENT='商品分类表';
 
 -- ----------------------------
 -- Table structure for bs_goods
@@ -228,7 +227,7 @@ CREATE TABLE `bs_goods` (
   `product` varchar(50) DEFAULT NULL COMMENT '产品表',
   `comment` varchar(50) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`gid`)
-) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=utf8mb4 COMMENT='商品表';
+) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=utf8mb4 COMMENT='商品表';
 
 -- ----------------------------
 -- Table structure for bs_goods_album
@@ -248,7 +247,7 @@ CREATE TABLE `bs_goods_album` (
   `status` int(11) DEFAULT NULL COMMENT '状态',
   `add_time` datetime DEFAULT NULL COMMENT '添加日期',
   PRIMARY KEY (`gaid`)
-) ENGINE=InnoDB AUTO_INCREMENT=1378 DEFAULT CHARSET=utf8mb4 COMMENT='商品图册表';
+) ENGINE=InnoDB AUTO_INCREMENT=1271 DEFAULT CHARSET=utf8mb4 COMMENT='商品图册表';
 
 -- ----------------------------
 -- Table structure for bs_goods_history
@@ -325,7 +324,7 @@ CREATE TABLE `bs_goods_sku` (
   `attr_value_set` text COMMENT 'sku属性值集',
   `is_default` int(11) DEFAULT NULL,
   PRIMARY KEY (`gskid`)
-) ENGINE=InnoDB AUTO_INCREMENT=313 DEFAULT CHARSET=utf8mb4 COMMENT='商品SKU表';
+) ENGINE=InnoDB AUTO_INCREMENT=334 DEFAULT CHARSET=utf8mb4 COMMENT='商品SKU表';
 
 -- ----------------------------
 -- Table structure for bs_goods_spec
@@ -346,7 +345,7 @@ CREATE TABLE `bs_goods_spec` (
   `is_key` int(11) DEFAULT NULL COMMENT '是否关键',
   `is_delete` int(11) DEFAULT NULL COMMENT '是否删除',
   PRIMARY KEY (`gspid`)
-) ENGINE=InnoDB AUTO_INCREMENT=323 DEFAULT CHARSET=utf8mb4 COMMENT='商品规格表';
+) ENGINE=InnoDB AUTO_INCREMENT=298 DEFAULT CHARSET=utf8mb4 COMMENT='商品规格表';
 
 -- ----------------------------
 -- Table structure for bs_orders
@@ -376,7 +375,7 @@ CREATE TABLE `bs_orders` (
   `comment` varchar(50) DEFAULT NULL COMMENT '备注',
   `receiver` varchar(100) DEFAULT NULL COMMENT '收货人',
   PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=836 DEFAULT CHARSET=utf8mb4 COMMENT='订单表';
+) ENGINE=InnoDB AUTO_INCREMENT=833 DEFAULT CHARSET=utf8mb4 COMMENT='订单表';
 
 -- ----------------------------
 -- Table structure for bs_orders_action
@@ -395,7 +394,28 @@ CREATE TABLE `bs_orders_action` (
   `action_note` varchar(200) DEFAULT NULL COMMENT '执行说明',
   `action_sort` int(11) DEFAULT NULL COMMENT '执行序号',
   PRIMARY KEY (`oaid`)
-) ENGINE=InnoDB AUTO_INCREMENT=454 DEFAULT CHARSET=utf8mb4 COMMENT='订单执行表';
+) ENGINE=InnoDB AUTO_INCREMENT=465 DEFAULT CHARSET=utf8mb4 COMMENT='订单执行表';
+
+-- ----------------------------
+-- Table structure for bs_orders_goods_delivery
+-- ----------------------------
+DROP TABLE IF EXISTS `bs_orders_goods_delivery`;
+CREATE TABLE `bs_orders_goods_delivery` (
+  `ogdid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `order_id` int(11) DEFAULT NULL COMMENT '订单ID',
+  `p_user_id` int(11) DEFAULT NULL COMMENT '发货人',
+  `c_user_id` int(11) DEFAULT NULL COMMENT '收货人',
+  `team_id` int(11) DEFAULT NULL COMMENT '团队',
+  `goods_id` int(11) DEFAULT NULL COMMENT '商品',
+  `goods_sku_id` int(11) DEFAULT NULL COMMENT '商品sku',
+  `antifake_code` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '防伪码',
+  `bar_code` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '条形码',
+  `add_time` datetime DEFAULT NULL COMMENT '发货时间',
+  `status` int(11) DEFAULT NULL COMMENT '状态',
+  `confirm_time` datetime DEFAULT NULL COMMENT '收货时间',
+  `return_time` datetime DEFAULT NULL COMMENT '退货时间',
+  PRIMARY KEY (`ogdid`)
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='扫码发货';
 
 -- ----------------------------
 -- Table structure for bs_orders_items
@@ -424,7 +444,7 @@ CREATE TABLE `bs_orders_items` (
   `introduction` text COMMENT '商品描述',
   `img_url` varchar(255) DEFAULT NULL COMMENT '商品图片',
   PRIMARY KEY (`oiid`)
-) ENGINE=InnoDB AUTO_INCREMENT=776 DEFAULT CHARSET=utf8mb4 COMMENT='订单明细表';
+) ENGINE=InnoDB AUTO_INCREMENT=758 DEFAULT CHARSET=utf8mb4 COMMENT='订单明细表';
 
 -- ----------------------------
 -- Table structure for bs_price_complaint
@@ -466,7 +486,7 @@ CREATE TABLE `bs_price_control` (
   `status` int(11) DEFAULT NULL COMMENT '状态',
   `comment` varchar(50) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`pcid`)
-) ENGINE=InnoDB AUTO_INCREMENT=1790 DEFAULT CHARSET=utf8mb4 COMMENT='商品控价表';
+) ENGINE=InnoDB AUTO_INCREMENT=1880 DEFAULT CHARSET=utf8mb4 COMMENT='商品控价表';
 
 -- ----------------------------
 -- Table structure for bs_price_control_history
@@ -514,7 +534,7 @@ CREATE TABLE `bs_rebate_record` (
   `comment` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
   `status` int(11) DEFAULT NULL COMMENT '状态  0未审核 1已审核 未支付 2 已审核 已支付   -1 过期',
   PRIMARY KEY (`rrid`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='经销商返利记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='经销商返利记录表';
 
 -- ----------------------------
 -- Table structure for bs_rebate_scheme
@@ -540,7 +560,7 @@ CREATE TABLE `bs_rebate_scheme` (
   `exeinfo` int(11) DEFAULT NULL COMMENT '执行',
   `sort` int(11) DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`rsid`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='返利方案表';
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='返利方案表';
 
 -- ----------------------------
 -- Table structure for bs_rebate_scheme_goods
@@ -554,7 +574,7 @@ CREATE TABLE `bs_rebate_scheme_goods` (
   `status` int(11) DEFAULT NULL COMMENT '状态  0 未启用 1启用    -1 过期',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`grsid`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='团队商品返利方案关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='团队商品返利方案关系表';
 
 -- ----------------------------
 -- Table structure for bs_rebate_scheme_item
@@ -571,7 +591,7 @@ CREATE TABLE `bs_rebate_scheme_item` (
   `rebate` float DEFAULT NULL COMMENT '返利数',
   `status` int(11) DEFAULT NULL COMMENT '状态  0 未启用 1启用    -1 过期',
   PRIMARY KEY (`rsiid`)
-) ENGINE=InnoDB AUTO_INCREMENT=196 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='返利方案明细表';
+) ENGINE=InnoDB AUTO_INCREMENT=316 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='返利方案明细表';
 
 -- ----------------------------
 -- Table structure for bs_retail
@@ -597,7 +617,40 @@ CREATE TABLE `bs_retail` (
   `status` int(11) DEFAULT NULL COMMENT '状态',
   `comment` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`retail_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='零售';
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='零售';
+
+-- ----------------------------
+-- Table structure for ms_content_audit
+-- ----------------------------
+DROP TABLE IF EXISTS `ms_content_audit`;
+CREATE TABLE `ms_content_audit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `resource_id` int(11) DEFAULT NULL COMMENT '资源id',
+  `resource_type` tinyint(1) DEFAULT NULL COMMENT '资源类型(1:图片，2:文字)',
+  `resource_location` tinyint(1) DEFAULT NULL COMMENT '资源位置(1:用户头像，2:素材图片，3:素材内容，4:订单凭证图片，5:审核凭证图片)',
+  `resource_content` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '资源内容',
+  `monitor_result` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '监控结果',
+  `spam_content` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '监控异常内容',
+  `trader_id` int(11) DEFAULT NULL COMMENT '用户id',
+  `trader_phone` varchar(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '用户账号',
+  `team_id` int(11) DEFAULT NULL COMMENT '团队id',
+  `team_nick_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '团队昵称',
+  `status` tinyint(1) DEFAULT NULL COMMENT '状态(0:未处理，1:通过，2:删除)',
+  `operator_id` int(11) DEFAULT NULL COMMENT '操作人',
+  `created_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `modified_time` datetime DEFAULT NULL COMMENT '最后修改时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=240 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for ms_content_scan_history
+-- ----------------------------
+DROP TABLE IF EXISTS `ms_content_scan_history`;
+CREATE TABLE `ms_content_scan_history` (
+  `md5` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'md5值',
+  `created_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`md5`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='已扫描数据历史表';
 
 -- ----------------------------
 -- Table structure for ms_im_user
@@ -615,7 +668,7 @@ CREATE TABLE `ms_im_user` (
   `status` int(1) DEFAULT NULL COMMENT 'status',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_key` (`im_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=611 DEFAULT CHARSET=utf8mb4 COMMENT='IM用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=644 DEFAULT CHARSET=utf8mb4 COMMENT='IM用户表';
 
 -- ----------------------------
 -- Table structure for ms_media_data
@@ -637,7 +690,7 @@ CREATE TABLE `ms_media_data` (
   `sort` int(11) DEFAULT NULL,
   `cover_url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=336 DEFAULT CHARSET=utf8mb4 COMMENT='媒体素材库';
+) ENGINE=InnoDB AUTO_INCREMENT=728 DEFAULT CHARSET=utf8mb4 COMMENT='媒体素材库';
 
 -- ----------------------------
 -- Table structure for ms_media_topic
@@ -652,7 +705,7 @@ CREATE TABLE `ms_media_topic` (
   `status` int(11) DEFAULT NULL COMMENT '状态',
   `comment` varchar(50) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=utf8mb4 COMMENT='媒体素材库主题表';
+) ENGINE=InnoDB AUTO_INCREMENT=470 DEFAULT CHARSET=utf8mb4 COMMENT='媒体素材库主题表';
 
 -- ----------------------------
 -- Table structure for ms_media_trader
@@ -666,7 +719,7 @@ CREATE TABLE `ms_media_trader` (
   `add_time` datetime DEFAULT NULL COMMENT '分享时间',
   `status` int(11) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=249 DEFAULT CHARSET=utf8mb4 COMMENT='媒体用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=1389 DEFAULT CHARSET=utf8mb4 COMMENT='媒体用户表';
 
 -- ----------------------------
 -- Table structure for ms_message_config
@@ -705,7 +758,44 @@ CREATE TABLE `ms_message_queue` (
   `status` int(11) DEFAULT NULL COMMENT '状态',
   `type` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2318 DEFAULT CHARSET=utf8mb4 COMMENT='消息队列表';
+) ENGINE=InnoDB AUTO_INCREMENT=4296 DEFAULT CHARSET=utf8mb4 COMMENT='消息队列表';
+
+-- ----------------------------
+-- Table structure for ms_message_switch
+-- ----------------------------
+DROP TABLE IF EXISTS `ms_message_switch`;
+CREATE TABLE `ms_message_switch` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `user_id` int(11) DEFAULT NULL COMMENT '用户ID',
+  `trader_id` int(11) NOT NULL COMMENT 'traderid',
+  `team_id` int(11) DEFAULT NULL COMMENT '团队ID',
+  `setting_key` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '设置名称',
+  `setting_value` int(11) DEFAULT NULL COMMENT '开关 ',
+  `comment` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for ms_message_syscall
+-- ----------------------------
+DROP TABLE IF EXISTS `ms_message_syscall`;
+CREATE TABLE `ms_message_syscall` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `biz_type` int(11) DEFAULT NULL COMMENT '业务类型 1系统 2用户注册 3订单提醒 4公告提醒 5 日志提醒 6充值提醒 7 提现提醒',
+  `sender_id` int(11) DEFAULT NULL COMMENT '发送者 系统0',
+  `receiver_id` int(11) DEFAULT NULL COMMENT '接收者',
+  `title` varchar(200) DEFAULT NULL COMMENT '消息标题',
+  `message` varchar(500) DEFAULT NULL COMMENT '消息内容',
+  `biz_id` int(11) DEFAULT NULL COMMENT '业务ID',
+  `add_time` datetime DEFAULT NULL COMMENT '发送时间',
+  `is_send` int(11) DEFAULT NULL COMMENT '发送标志：0-未发送；1-发送成功；2-发送失败',
+  `send_time` datetime DEFAULT NULL COMMENT '发送时间',
+  `is_readed` int(11) DEFAULT NULL COMMENT '是否已读',
+  `read_time` datetime DEFAULT NULL COMMENT '阅读时间',
+  `status` int(11) DEFAULT NULL COMMENT '状态',
+  `type` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=189 DEFAULT CHARSET=utf8mb4 COMMENT='关联消息表';
 
 -- ----------------------------
 -- Table structure for ms_notice
@@ -790,7 +880,7 @@ CREATE TABLE `ms_system_notice` (
   `user_id` int(11) DEFAULT NULL COMMENT '后台添加人',
   `priority` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='平台系统消息表';
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='平台系统消息表';
 
 -- ----------------------------
 -- Table structure for ms_task
@@ -864,7 +954,7 @@ CREATE TABLE `ps_log` (
   `permissions` varchar(100) DEFAULT NULL COMMENT '权限值',
   `start_time` datetime DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='操作日志';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COMMENT='操作日志';
 
 -- ----------------------------
 -- Table structure for ps_organization
@@ -960,7 +1050,7 @@ CREATE TABLE `ps_user` (
   `ctime` datetime DEFAULT NULL COMMENT '创建时间',
   `isSuper` tinyint(1) DEFAULT '0' COMMENT '是否超级管理员',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='用户';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COMMENT='用户';
 
 -- ----------------------------
 -- Table structure for ps_user_organization
@@ -983,7 +1073,7 @@ CREATE TABLE `ps_user_permission` (
   `permission_id` int(10) unsigned NOT NULL COMMENT '权限编号',
   `type` tinyint(4) DEFAULT NULL COMMENT '权限类型(-1:减权限,1:增权限)',
   PRIMARY KEY (`user_permission_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COMMENT='用户权限关联表';
+) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=utf8mb4 COMMENT='用户权限关联表';
 
 -- ----------------------------
 -- Table structure for ps_user_role
@@ -1012,7 +1102,7 @@ CREATE TABLE `ss_gold_grain` (
   `update_time` datetime DEFAULT NULL COMMENT '更新日期',
   `comment` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`ggid`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='金谷粒表';
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='金谷粒表';
 
 -- ----------------------------
 -- Table structure for ss_gold_grain_detail
@@ -1034,7 +1124,7 @@ CREATE TABLE `ss_gold_grain_detail` (
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`ggdid`)
-) ENGINE=InnoDB AUTO_INCREMENT=442 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='金谷粒详情表';
+) ENGINE=InnoDB AUTO_INCREMENT=502 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='金谷粒详情表';
 
 -- ----------------------------
 -- Table structure for ss_goods_store
@@ -1054,7 +1144,7 @@ CREATE TABLE `ss_goods_store` (
   `status` int(11) DEFAULT NULL COMMENT '状态',
   `comment` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`gsid`)
-) ENGINE=InnoDB AUTO_INCREMENT=212 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='经销商库存表';
+) ENGINE=InnoDB AUTO_INCREMENT=210 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='经销商库存表';
 
 -- ----------------------------
 -- Table structure for ss_goods_store_detail
@@ -1077,7 +1167,7 @@ CREATE TABLE `ss_goods_store_detail` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `status` int(11) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`gsdid`)
-) ENGINE=InnoDB AUTO_INCREMENT=478 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='经销商库存详情表';
+) ENGINE=InnoDB AUTO_INCREMENT=632 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='经销商库存详情表';
 
 -- ----------------------------
 -- Table structure for ss_org_stockpile
@@ -1172,7 +1262,7 @@ CREATE TABLE `ts_organization` (
   `source` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`org_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='组织';
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='组织';
 
 -- ----------------------------
 -- Table structure for us_account
@@ -1190,7 +1280,7 @@ CREATE TABLE `us_account` (
   `is_binded` int(1) DEFAULT NULL COMMENT '是否绑定 1绑定 0 未绑定',
   `source` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '来源(app,web,ios,android)',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=587 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='登陆用户账号';
+) ENGINE=InnoDB AUTO_INCREMENT=503 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='登陆用户账号';
 
 -- ----------------------------
 -- Table structure for us_app_version
@@ -1235,7 +1325,7 @@ CREATE TABLE `us_certificate` (
   `status` int(1) DEFAULT NULL COMMENT '状态 1审核中 2拒绝 3通过',
   `certificate` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`cert_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=205 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微商授权表';
+) ENGINE=InnoDB AUTO_INCREMENT=231 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微商授权表';
 
 -- ----------------------------
 -- Table structure for us_certificate_album
@@ -1251,7 +1341,7 @@ CREATE TABLE `us_certificate_album` (
   `add_time` datetime DEFAULT NULL COMMENT '添加时间',
   `status` int(11) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8mb4 COMMENT='微商授权图片表';
+) ENGINE=InnoDB AUTO_INCREMENT=190 DEFAULT CHARSET=utf8mb4 COMMENT='微商授权图片表';
 
 -- ----------------------------
 -- Table structure for us_fake_complain
@@ -1291,7 +1381,7 @@ CREATE TABLE `us_group` (
   `status` int(1) DEFAULT NULL COMMENT '群组状态',
   `comment` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=226 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='我的群组';
+) ENGINE=InnoDB AUTO_INCREMENT=284 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='我的群组';
 
 -- ----------------------------
 -- Table structure for us_group_member
@@ -1306,7 +1396,7 @@ CREATE TABLE `us_group_member` (
   `status` int(1) DEFAULT NULL COMMENT '状态',
   `is_master` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=737 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微商群组成员表';
+) ENGINE=InnoDB AUTO_INCREMENT=969 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微商群组成员表';
 
 -- ----------------------------
 -- Table structure for us_group_notice
@@ -1320,7 +1410,7 @@ CREATE TABLE `us_group_notice` (
   `comment` varchar(50) DEFAULT NULL COMMENT '备注',
   `is_last` int(1) DEFAULT NULL COMMENT '是否最新一条',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COMMENT='群组公告';
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COMMENT='群组公告';
 
 -- ----------------------------
 -- Table structure for us_invite_code
@@ -1336,7 +1426,7 @@ CREATE TABLE `us_invite_code` (
   `expired_time` datetime DEFAULT NULL COMMENT '失效时间',
   `pic_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1585 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='邀请码';
+) ENGINE=InnoDB AUTO_INCREMENT=1835 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='邀请码';
 
 -- ----------------------------
 -- Table structure for us_message_code
@@ -1350,7 +1440,7 @@ CREATE TABLE `us_message_code` (
   `status` int(1) DEFAULT NULL COMMENT '生成时间 1发送 0未发送',
   `expired_time` datetime DEFAULT NULL COMMENT '失效时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1044 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='短信验证码';
+) ENGINE=InnoDB AUTO_INCREMENT=801 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='短信验证码';
 
 -- ----------------------------
 -- Table structure for us_org_user
@@ -1364,7 +1454,7 @@ CREATE TABLE `us_org_user` (
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`ouid`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for us_region
@@ -1415,7 +1505,7 @@ CREATE TABLE `us_team` (
   `comment` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
   `flag` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'flag',
   PRIMARY KEY (`team_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='销售团队';
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='销售团队';
 
 -- ----------------------------
 -- Table structure for us_team_rank
@@ -1430,7 +1520,7 @@ CREATE TABLE `us_team_rank` (
   `is_leaf` int(1) DEFAULT NULL COMMENT '是否叶子节点',
   PRIMARY KEY (`id`),
   UNIQUE KEY `KEY_TEAM_RANK` (`team_id`,`rank`)
-) ENGINE=InnoDB AUTO_INCREMENT=395 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='团队等级';
+) ENGINE=InnoDB AUTO_INCREMENT=412 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='团队等级';
 
 -- ----------------------------
 -- Table structure for us_trader
@@ -1458,7 +1548,7 @@ CREATE TABLE `us_trader` (
   `is_default_team` int(1) DEFAULT NULL COMMENT '是否默认团队 1是 0 否',
   `rank1_id` int(11) DEFAULT NULL COMMENT '所属总代理id',
   PRIMARY KEY (`trader_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=544 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微商身份';
+) ENGINE=InnoDB AUTO_INCREMENT=593 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微商身份';
 
 -- ----------------------------
 -- Table structure for us_trader_address
@@ -1477,7 +1567,7 @@ CREATE TABLE `us_trader_address` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `is_default` int(1) DEFAULT '0' COMMENT '默认(0,1默认)',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=371 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='地址';
+) ENGINE=InnoDB AUTO_INCREMENT=358 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='地址';
 
 -- ----------------------------
 -- Table structure for us_trader_application
@@ -1503,7 +1593,7 @@ CREATE TABLE `us_trader_application` (
   `source_type` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '来源方式   市场活动代码 渠道代码',
   `trader_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`app_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=434 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微商申请记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=693 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微商申请记录表';
 
 -- ----------------------------
 -- Table structure for us_trader_settings
@@ -1516,7 +1606,7 @@ CREATE TABLE `us_trader_settings` (
   `svalue` varchar(16) DEFAULT NULL,
   `set_time` datetime DEFAULT NULL COMMENT '时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='设置';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='设置';
 
 -- ----------------------------
 -- Table structure for us_trader_upgrade
@@ -1533,7 +1623,7 @@ CREATE TABLE `us_trader_upgrade` (
   `apply_time` datetime DEFAULT NULL COMMENT '申请时间',
   `approve_time` datetime DEFAULT NULL COMMENT '批准时间',
   PRIMARY KEY (`upgrade_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微商升级表';
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微商升级表';
 
 -- ----------------------------
 -- Table structure for us_upgrade
@@ -1577,13 +1667,13 @@ CREATE TABLE `us_user` (
   `create_time` datetime DEFAULT NULL COMMENT '注册时间',
   `modified_time` datetime DEFAULT NULL COMMENT '更新时间',
   `end_time` datetime DEFAULT NULL COMMENT '注销时间',
-  `status` int(1) DEFAULT NULL COMMENT '状态 1 正常  -1 注销',
+  `status` int(1) DEFAULT NULL COMMENT '状态 1 正常 0 冻结  -1 注销',
   `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '邮箱',
   `user_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '用户名',
   `comment` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
   `is_pass` int(1) DEFAULT NULL COMMENT '备用状态',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=521 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=460 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户表';
 
 -- ----------------------------
 -- Table structure for us_user_feedback
@@ -1595,5 +1685,10 @@ CREATE TABLE `us_user_feedback` (
   `content` varchar(512) DEFAULT NULL COMMENT '反馈内容',
   `email` varchar(128) DEFAULT NULL COMMENT '邮箱',
   `add_time` datetime DEFAULT NULL COMMENT '添加时间',
+  `status` int(11) DEFAULT NULL COMMENT '状态 0 未处理 1 已处理',
+  `handler` int(11) DEFAULT NULL COMMENT '负责人',
+  `handle_result` varchar(500) DEFAULT NULL COMMENT '处理结果意见',
+  `end_time` datetime DEFAULT NULL COMMENT '处理时间',
+  `comment` varchar(50) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COMMENT='反馈';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COMMENT='反馈';
