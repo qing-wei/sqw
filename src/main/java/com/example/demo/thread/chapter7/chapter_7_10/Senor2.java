@@ -13,12 +13,11 @@ public class Senor2 implements Runnable {
     @Override
     public void run() {
         counter.carIn();
+        counter.carOut();
+        counter.carOut();
         counter.carIn();
         counter.carIn();
         counter.carIn();
-        counter.carOut();
-        counter.carOut();
-        counter.carOut();
         counter.carIn();
         counter.carIn();
         counter.carIn();
