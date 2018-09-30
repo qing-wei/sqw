@@ -1,4 +1,4 @@
-package com.example.demo.artconcurrent;
+package com.example.demo.artconcurrent.chapter01;
 
 /**
  * Created by siqingwei on 2018/9/29.
